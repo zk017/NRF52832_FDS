@@ -637,11 +637,6 @@ uint32_t zk_fds_read(uint16_t file_id, uint16_t record_key)
 
 		NRF_LOG_PRINTF("Found Record ID = %d\r\n",record_desc.record_id );
 		NRF_LOG_PRINTF("Data = ");
-//		data = (uint32_t *) flash_record.p_data;
-//		for (uint8_t i=0;i<flash_record.p_header->length_words;i++)
-//		{
-//			NRF_LOG_PRINTF("0x%x 0x%x 0x%x 0x%x",data[i], data[i+1], data[i+2], data[i+3]);
-//		}
 		uint8_t nsize = 12;
 		memcpy(data, flash_record.p_data, nsize);
 		NRF_LOG_PRINTF("0x%x 0x%x 0x%x\r\n", data[0], data[1], data[11]);
